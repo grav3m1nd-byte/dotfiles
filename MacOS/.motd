@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ $EUID -ne 0 ]]; then
+  #COWS=(/usr/local/share/cows/*.cow)
+  #RAND_COW=$(($RANDOM % $(find /usr/local/share/cows/ -name "*.cow" | wc -l)))
+
+  MESSAGE="Hey $(dscl . -read /Users/$USER RealName | cut -d: -f2 | sed -e 's/^[ \t]*//' | grep -v "^$" | cut -d" " -f1), how's it going?!"
+
+  #neofetch && fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat && echo
+  #neofetch && (echo $MESSAGE && echo && fortune) | cowsay -f ${COWS[$RAND_COW]} | lolcat && echo
+  neofetch && (echo $MESSAGE) | lolcat && echo
+fi
