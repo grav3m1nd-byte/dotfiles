@@ -5,7 +5,7 @@ source ~/.vim_runtime/vimrcs/extended.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 
-execute pathogen#infect()
+" execute pathogen#infect()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -49,7 +49,7 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive' ],
       \             [ 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
+      \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
@@ -62,6 +62,12 @@ let g:lightline = {
       \   'readonly': '(&filetype!="help" && &readonly)',
       \   'modified': '(&filetype!="help" && (&modified || !&modifiable))',
       \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+      \ },
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \ },
+      \ 'component_type': {
+      \   'syntastic': 'error',
       \ },
       \ 'separator': { 'left': '', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': '|' }
