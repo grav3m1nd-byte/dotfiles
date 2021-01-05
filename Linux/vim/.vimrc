@@ -71,7 +71,7 @@ let g:lightline = {
       \   'syntastic': 'error',
       \ },
       \ 'separator': { 'left': '', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': '|' }
+      \ 'subseparator': { 'left': '', 'right': '|' }
       \ }
 
 
