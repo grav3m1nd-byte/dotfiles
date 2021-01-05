@@ -32,11 +32,11 @@ let g:NERDTreeWinPos = "left"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
     set laststatus=2
-    set statusline=\ %{HasPaste()}%F%m%r%h
-    set statusline+=\ %w
-    set statusline+=\ \ CWD:\ %r%{getcwd()}%h
-    set statusline+=\ Line:\ %l
-    set statusline+=\ \ Column:\ %c
+"     set statusline=\ %{HasPaste()}%F%m%r%h
+"     set statusline+=\ %w
+"     set statusline+=\ \ CWD:\ %r%{getcwd()}%h
+"     set statusline+=\ Line:\ %l
+"     set statusline+=\ \ Column:\ %c
 catch
 endtry
 
@@ -44,7 +44,7 @@ endtry
 " => lightline: my own customizations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive' ],
@@ -84,28 +84,29 @@ let g:lightline = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" try
-"     set statusline+=%#warningmsg#
-"     set statusline+=%{SyntasticStatuslineFlag()}
-"     set statusline+=%*
-" 
-"     let g:syntastic_always_populate_loc_list = 1
-"     let g:syntastic_auto_loc_list = 1
-"     let g:syntastic_check_on_open = 1
-"     let g:syntastic_aggregate_errors = 1
-"     let g:syntastic_check_on_wq = 0
-"     
-"     let g:syntastic_style_error_symbol = '⚡'
-"     let g:syntastic_error_symbol = '✗'
-"     let g:syntastic_warning_symbol = '⚠'
-"     let g:syntastic_javascript_checkers = ['jsxcs', 'jsxhint']
-"     let g:syntastic_python_checkers = ['pylint']
-"     let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-"     let g:syntastic_enable_perl_checker = 1
-"     let g:syntastic_vim_checkers = ['vint']
-"     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
-" catch
-" endtry
+try
+"    set statusline+=%#warningmsg#
+"    set statusline+=%{SyntasticStatuslineFlag()}
+"    set statusline+=%*
+
+    let g:syntastic_stl_format = "[%E{Err: #%e}%B{ | }%W{Warn: #%w}]"
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_aggregate_errors = 1
+    let g:syntastic_check_on_wq = 0
+    
+    let g:syntastic_style_error_symbol = '⚡'
+    let g:syntastic_error_symbol = '✗'
+    let g:syntastic_warning_symbol = '⚠'
+    let g:syntastic_javascript_checkers = ['jsxcs', 'jsxhint']
+    let g:syntastic_python_checkers = ['pylint']
+    let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+    let g:syntastic_enable_perl_checker = 1
+    let g:syntastic_vim_checkers = ['vint']
+    let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+catch
+endtry
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
