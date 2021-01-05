@@ -15,7 +15,7 @@ source ~/.vim_runtime/vimrcs/plugins_config.vim
 set encoding=utf-8
 set fileencoding=utf-8
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 
 try
     syntax on
@@ -25,7 +25,8 @@ try
 catch
 endtry
 
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos = 'left'
+map <leader>BE :BufExplorer<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Statusline Customizations
@@ -89,7 +90,7 @@ try
 "    set statusline+=%{SyntasticStatuslineFlag()}
 "    set statusline+=%*
 
-    let g:syntastic_stl_format = "[%E{Err: #%e}%B{ | }%W{Warn: #%w}]"
+    let g:syntastic_stl_format = '[%E{Err: #%e}%B{ | }%W{Warn: #%w}]'
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 0
@@ -105,6 +106,7 @@ try
     let g:syntastic_enable_perl_checker = 1
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+    map <leader>sc :SyntasticCheck<cr>
 catch
 endtry
 
