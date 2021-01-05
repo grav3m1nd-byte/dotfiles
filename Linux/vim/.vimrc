@@ -80,7 +80,7 @@ let g:lightline = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:jedi#auto_initialization = 1
 " let g:jedi#auto_vim_configuration = 1
-" let g:jedi#use_splits_not_buffers = "right"
+" let g:jedi#use_splits_not_buffers = 'right'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
