@@ -22,6 +22,7 @@ try
     colorscheme peaksea
     set showcmd
     set cursorline
+    set cursorcolumn
 catch
 endtry
 
@@ -106,9 +107,15 @@ try
     let g:syntastic_enable_perl_checker = 1
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+    let g:syntastic_yaml_checkers = ['yamllint']
     map <leader>sc :SyntasticCheck<cr>
 catch
 endtry
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YAML Section
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
