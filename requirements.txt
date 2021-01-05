@@ -1,0 +1,4 @@
+pylint
+vint
+shellcheck
+yamllint
