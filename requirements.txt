@@ -1,4 +1,8 @@
 pylint
+phpmd
+php-codesniffer
 vint
 shellcheck
 yamllint
+cppcheck
+jsonlint

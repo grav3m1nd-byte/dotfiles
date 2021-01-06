@@ -108,6 +108,7 @@ try
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
     let g:syntastic_yaml_checkers = ['yamllint']
+    let g:syntastic_json_checkers = ['jsonlint'] 
     map <leader>sc :SyntasticCheck<cr>
 catch
 endtry
