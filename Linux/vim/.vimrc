@@ -22,6 +22,7 @@ try
     colorscheme peaksea
     set showcmd
     set cursorline
+    set cursorcolumn
 catch
 endtry
 
