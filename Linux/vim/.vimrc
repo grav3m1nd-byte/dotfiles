@@ -98,7 +98,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YAML Section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JSON Formatting
@@ -106,7 +106,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 function! FormatJSON()
     :%!python3 -m json.tool
 endfunction
-au FileType json nmap <Leader>j :call JSONFormat()<cr>
+autocmd FileType json nmap <Leader>j :call JSONFormat()<cr>
 command! -range JSONFormat <line1>,<line2>!python3 -m json.tool
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
