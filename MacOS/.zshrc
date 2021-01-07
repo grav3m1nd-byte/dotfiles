@@ -273,7 +273,7 @@ RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 #zstyle ':vcs_info:git:*' formats '%b'
 #zstyle ':vcs_info:git:*' formats '%F{240}(%b):%r%f'
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{white}:%F{red}[%r]%f'
+zstyle ':vcs_info:git:*' formats '%B%F{yellow}( %b %F{blue}⎇ %F{yellow})%F{white}:%F{red}[ %r ]%f'
 zstyle ':vcs_info:*' enable git
 
 # Run zsh-navigation-tools

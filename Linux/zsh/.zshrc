@@ -211,7 +211,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{white}:%F{red}[%r]%f'
+zstyle ':vcs_info:git:*' formats '%B%F{yellow}( %b %F{blue}⎇ %F{yellow})%F{white}:%F{red}[ %r ]%f'
 zstyle ':vcs_info:*' enable git
 
 # Enable dynamic motd using fortune, cowsay, and lolcat

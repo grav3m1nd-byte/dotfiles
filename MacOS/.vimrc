@@ -109,7 +109,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YAML Section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JSON Formatting
@@ -119,6 +119,7 @@ function! FormatJSON()
 endfunction
 
 autocmd FileType json nmap <Leader>j :call FormatJSON()<cr>
+autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,5 +157,4 @@ endfunction
 function! MyFugitive()
   return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
 endfunction
-
 

@@ -30,7 +30,9 @@ map <leader>BE :BufExplorer<cr>
 " => Statusline Customizations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-    set laststatus=2
+    set laststatus=2  "Show Statusline
+    set showtabline=2 "Show tabline
+    set guioptions+=e "use GUI tabline
 catch
 endtry
 
@@ -103,7 +105,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YAML Section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JSON Formatting
@@ -113,7 +115,13 @@ function! FormatJSON()
 endfunction
 
 autocmd FileType json nmap <Leader>j :call FormatJSON()<cr>
+autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Logstash Config Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType logstash setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
@@ -124,9 +132,9 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 " set guifont=DroidSansMono\ Nerd\ Font:h11
 
 " loading the plugin
-let g:webdevicons_enable = 0
+let g:webdevicons_enable = 1
 " adding the flags to NERDTree
-let g:webdevicons_enable_nerdtree = 0
+let g:webdevicons_enable_nerdtree = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
@@ -142,3 +150,4 @@ endfunction
 function! MyFugitive()
   return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
 endfunction
+
