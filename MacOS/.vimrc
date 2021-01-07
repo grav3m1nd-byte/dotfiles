@@ -11,6 +11,7 @@ source ~/.vim_runtime/vimrcs/plugins_config.vim
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf-8
 set fileencoding=utf-8
+
 " Use Unix as the standard file type
 set fileformats=unix,dos,mac
 
@@ -63,10 +64,13 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ },
       \ 'separator': { 'left': '', 'right': ' ' },
       \ 'subseparator': { 'left': '', 'right': '|' }
       \ }
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
@@ -89,7 +93,7 @@ try
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
     let g:syntastic_yaml_checkers = ['yamllint']
-    let g:syntastic_json_checkers = ['jsonlint'] 
+"    let g:syntastic_json_checkers = ['jsonlint', 'jsonval'] 
     map <leader>sc :SyntasticCheck<cr>
 catch
 endtry
@@ -116,13 +120,26 @@ autocmd FileType logstash setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Linux Fonts
-" set guifont=DroidSansMono\ Nerd\ Font\ 11
-" MacOS Fonts
-" set guifont=DroidSansMono\ Nerd\ Font:h11
+try
+    " Linux Fonts
+    " set guifont=DroidSansMono\ Nerd\ Font\ 11
+    " MacOS Fonts
+"    set guifont=DroidSansMono_Nerd_Font:h11
 
-" loading the plugin
-let g:webdevicons_enable = 0
-" adding the flags to NERDTree
-let g:webdevicons_enable_nerdtree = 0
+    " loading the plugin
+    let g:webdevicons_enable = 1
+    " adding the flags to NERDTree
+    let g:webdevicons_enable_nerdtree = 1
+catch
+endtry
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction

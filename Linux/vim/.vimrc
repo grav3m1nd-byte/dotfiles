@@ -63,6 +63,10 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ },
       \ 'separator': { 'left': '', 'right': ' ' },
       \ 'subseparator': { 'left': '', 'right': '|' }
       \ }
@@ -113,7 +117,7 @@ command! -range JSONFormat <line1>,<line2>!python3 -m json.tool
 " => DevIcons
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linux Fonts
-" set guifont=DroidSansMono\ Nerd\ Font\ 11
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 " MacOS Fonts
 " set guifont=DroidSansMono\ Nerd\ Font:h11
 
@@ -121,4 +125,15 @@ command! -range JSONFormat <line1>,<line2>!python3 -m json.tool
 let g:webdevicons_enable = 0
 " adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
