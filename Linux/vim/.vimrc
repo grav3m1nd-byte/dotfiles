@@ -5,9 +5,6 @@ source ~/.vim_runtime/vimrcs/extended.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 
-" execute pathogen#infect()
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,11 +31,6 @@ map <leader>BE :BufExplorer<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
     set laststatus=2
-"     set statusline=\ %{HasPaste()}%F%m%r%h
-"     set statusline+=\ %w
-"     set statusline+=\ \ CWD:\ %r%{getcwd()}%h
-"     set statusline+=\ Line:\ %l
-"     set statusline+=\ \ Column:\ %c
 catch
 endtry
 
@@ -75,22 +67,10 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '|' }
       \ }
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Configuring Jedi-Vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:jedi#auto_initialization = 1
-" let g:jedi#auto_vim_configuration = 1
-" let g:jedi#use_splits_not_buffers = 'right'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-"    set statusline+=%#warningmsg#
-"    set statusline+=%{SyntasticStatuslineFlag()}
-"    set statusline+=%*
-
     let g:syntastic_stl_format = '[%E{Err: #%e}%B{ | }%W{Warn: #%w}]'
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
