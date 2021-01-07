@@ -106,7 +106,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 function! FormatJSON()
     :%!python3 -m json.tool
 endfunction
-map <leader>js :FormatJSON<cr>
+map <leader>js :call FormatJSON()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
