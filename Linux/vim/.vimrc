@@ -101,6 +101,14 @@ endtry
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => JSON Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! FormatJSON()
+    :%!python3 -m json.tool
+endfunction
+map <leader>js :FormatJSON<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linux Fonts
