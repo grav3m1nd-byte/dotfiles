@@ -50,7 +50,7 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+      \   'fugitive': '%{exists("*FugitiveHead")?MyFugitive:""}'
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help" && &readonly)',
@@ -66,6 +66,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
+      \   'fugitive': 'MyFugitive'
       \ },
       \ 'separator': { 'left': '', 'right': ' ' },
       \ 'subseparator': { 'left': '', 'right': '|' }
@@ -137,3 +138,6 @@ function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
+function! MyFugitive()
+  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
+endfunction

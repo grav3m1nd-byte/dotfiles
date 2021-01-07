@@ -31,7 +31,9 @@ map <leader>BE :BufExplorer<cr>
 " => Statusline Customizations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-    set laststatus=2
+    set laststatus=2  "Show Statusline
+    set showtabline=2 "Show tabline
+    set guioptions+=e "use GUI tabline
 catch
 endtry
 
@@ -51,7 +53,7 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+      \   'fugitive': '%{exists("*FugitiveHead")?MyFugitive:""}'
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help" && &readonly)',
@@ -67,9 +69,15 @@ let g:lightline = {
       \ 'component_function': {
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
+      \   'fugitive': 'MyFugitive'
       \ },
       \ 'separator': { 'left': '', 'right': ' ' },
       \ 'subseparator': { 'left': '', 'right': '|' }
+      \ }
+
+let g:lightline.tabline = {
+      \ 'left': [ [ 'tabs' ] ],
+      \ 'right': [ [ 'close' ] ]
       \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,3 +151,9 @@ endfunction
 function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
+
+function! MyFugitive()
+  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
+endfunction
+
+
