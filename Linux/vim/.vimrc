@@ -16,7 +16,11 @@ set fileformats=unix,dos,mac
 
 try
     syntax on
+
+    " Colorscheme
+    set background=dark
     colorscheme peaksea
+
     set showcmd
     set cursorline
     set cursorcolumn
@@ -86,8 +90,9 @@ try
     let g:syntastic_check_on_wq = 0
     
     let g:syntastic_style_error_symbol = '⚡'
-    let g:syntastic_error_symbol = '✗'
-    let g:syntastic_warning_symbol = '⚠'
+    let g:syntastic_error_symbol = '❌'
+    let g:syntastic_style_warning_symbol = '❗' 
+    let g:syntastic_warning_symbol = '❗'
     let g:syntastic_javascript_checkers = ['jsxcs', 'jsxhint']
     let g:syntastic_python_checkers = ['pylint']
     let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']

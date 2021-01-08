@@ -2,6 +2,7 @@
 " Maintainer: 
 "       Amir Salihefendic — @amix3k
 "
+"       
 " Awesome_version:
 "       Get this config, nice color schemes and lots of plugins!
 "
@@ -39,7 +40,7 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
-au FocusGained,BufEnter * checktime
+autocmd FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -56,9 +57,6 @@ au FocusGained,BufEnter * checktime
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-" set so=7
-
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en' 
 set langmenu=en
@@ -68,22 +66,11 @@ source $VIMRUNTIME/menu.vim
 " Turn on the Wild menu
 set wildmenu
 
-" Ignore compiled files
-" set wildignore=*.o,*~,*.pyc
-" if has("win16") || has("win32")
-"     set wildignore+=.git\*,.hg\*,.svn\*
-" else
-"     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-" endif
-
 "Always show current position
 set ruler
 
 " Height of the command bar
 " set cmdheight=1
-
-" A buffer becomes hidden when it is abandoned
-" set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -109,24 +96,9 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch 
-" How many tenths of a second to blink when matching brackets
-" set mat=2
-
-" No annoying sound on errors
-" set noerrorbells
-" set novisualbell
-" set t_vb=
-" set tm=500
-
-" Properly disable sound on errors on MacVim
-" if has("gui_macvim")
-"     autocmd GUIEnter * set vb t_vb=
-" endif
-
 
 " Add a bit extra margin to the left
-" set foldcolumn=1
-
+set foldcolumn=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -154,21 +126,6 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Set utf8 as standard encoding and en_US as the standard language
-" set encoding=utf8
-
-" Use Unix as the standard file type
-" set ffs=unix,dos,mac
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git etc. anyway...
-" set nobackup
-" set nowb
-" set noswapfile
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -192,15 +149,6 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-" vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-" vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,41 +165,41 @@ set wrap "Wrap lines
 " map <C-h> <C-W>h
 " map <C-l> <C-W>l
 " 
-" " Close the current buffer
-" map <leader>bd :Bclose<cr>:tabclose<cr>gT
-" 
-" " Close all the buffers
-" map <leader>ba :bufdo bd<cr>
-" 
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
 " map <leader>l :bnext<cr>
 " map <leader>h :bprevious<cr>
 " 
-" " Useful mappings for managing tabs
-" map <leader>tn :tabnew<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>tc :tabclose<cr>
-" map <leader>tm :tabmove 
-" map <leader>t<leader> :tabnext 
-" 
-" " Let 'tl' toggle between this and the last accessed tab
-" let g:lasttab = 1
-" nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-" au TabLeave * let g:lasttab = tabpagenr()
-" 
-" 
-" " Opens a new tab with the current buffer's path
-" " Super useful when editing files in the same directory
-" map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-" 
-" " Switch CWD to the directory of the open buffer
-" map <leader>cd :cd %:p:h<cr>:pwd<cr>
-" 
-" " Specify the behavior when switching between buffers 
-" try
-"   set switchbuf=useopen,usetab,newtab
-"   set stal=2
-" catch
-" endtry
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext 
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Specify the behavior when switching between buffers 
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -301,32 +249,10 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " Pressing ,ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
-" 
-" " Shortcuts using <leader>
-" map <leader>sn ]s
-" map <leader>sp [s
-" map <leader>sa zg
-" map <leader>s? z=
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " Remove the Windows ^M - when the encodings gets messed up
-" noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-" 
-" " Quickly open a buffer for scribble
-" map <leader>q :e ~/buffer<cr>
-" 
-" " Quickly open a markdown buffer for scribble
-" map <leader>x :e ~/buffer.md<cr>
-" 
-" " Toggle paste mode on and off
-" map <leader>pp :setlocal paste!<cr>
+" Quickly open a markdown buffer for scribble
+map <leader>x :e ~/buffer.md<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
