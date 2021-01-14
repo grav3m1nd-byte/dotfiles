@@ -17,7 +17,11 @@ set fileformats=unix,dos,mac
 
 try
     syntax on
+
+    " Colorscheme
+    set background=dark
     colorscheme peaksea
+
     set showcmd
     set cursorline
     set cursorcolumn
@@ -71,7 +75,7 @@ let g:lightline = {
       \   'fileformat': 'MyFileformat',
       \   'fugitive': 'MyFugitive'
       \ },
-      \ 'separator': { 'left': '', 'right': ' ' },
+      \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '|' }
       \ }
 
@@ -119,8 +123,11 @@ function! FormatJSON()
     :%!python3 -m json.tool
 endfunction
 
-autocmd FileType json nmap <Leader>j :call FormatJSON()<cr>
-autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup json_ft
+    autocmd FileType json nmap <Leader>js :call FormatJSON()<cr>
+    autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
+
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -135,7 +142,7 @@ try
     " Linux Fonts
     " set guifont=DroidSansMono\ Nerd\ Font\ 11
     " MacOS Fonts
-"    set guifont=DroidSansMono_Nerd_Font:h11
+    " set guifont=DroidSansMono_Nerd_Font:h11
 
     " loading the plugin
     let g:webdevicons_enable = 1
@@ -156,6 +163,7 @@ function! MyFileformat()
 endfunction
 
 function! MyFugitive()
-  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
+  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'' : '') : ''
 endfunction
+
 
