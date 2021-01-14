@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+#(printf "Hostname:\t$(hostname -s )\n" && sw_vers) | lolcat
+
+COWS=(/usr/share/cows/*.cow)
+#RAND_COW=$(($RANDOM % $(ls /usr/local/share/cows/*.cow | wc -l)))
+RAND_COW=$(($RANDOM % $(find /usr/share/cows/ -name "*.cow" | wc -l)))
+neofetch && fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat && echo

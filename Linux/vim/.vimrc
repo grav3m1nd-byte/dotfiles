@@ -153,6 +153,6 @@ function! MyFileformat()
 endfunction
 
 function! MyFugitive()
-  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'⎇ ' : '') : ''
+  return winwidth(0) > 70 ? (strlen(FugitiveHead()) ? FugitiveHead().' '.'' : '') : ''
 endfunction
 
