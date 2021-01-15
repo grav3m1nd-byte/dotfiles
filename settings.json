@@ -35,7 +35,8 @@
 	    "antialiasingMode": "cleartype",
 	    "useAcrylic": true,
 	    "acrylicOpacity": 0.9,
-	    "background": "#000000"
+	    "background": "#000000",
+	    "colorScheme": "One Half Dark"
         },
         "list":
         [
