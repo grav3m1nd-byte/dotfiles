@@ -129,7 +129,8 @@ export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
 export LC_ALL="en_US.UTF-8"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Powerlevel9k Configurations
