@@ -125,11 +125,18 @@ function! FormatJSON()
     :%!python3 -m json.tool
 endfunction
 
+function! RawJSON()
+    :%delete | 0put =json_encode(json_decode(@@))
+    ":%!jq -c .
+endfunction
+
 augroup json_ft
-    autocmd FileType json nmap <Leader>js :call FormatJSON()<cr>
+    autocmd FileType json nmap <Leader>jsp :call FormatJSON()<cr>
+    autocmd FileType json nmap <Leader>jsr :call RawJSON()<cr>
     autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 augroup END
 
+command! -range JSONRaw <line1>,<line2>call RawJSON()
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
