@@ -131,7 +131,7 @@ function! RawJSON()
 endfunction
 
 augroup json_ft
-    autocmd BufNewFile,BufRead *.ndjson set filetype=json
+    autocmd BufNewFile,BufRead *.ndjson set filetype=json 
     autocmd FileType json nmap <Leader>jsp :call FormatJSON()<cr>
     autocmd FileType json nmap <Leader>jsr :call RawJSON()<cr>
     autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
