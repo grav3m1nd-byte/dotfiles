@@ -122,12 +122,13 @@ autocmd FileType yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " => JSON Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! FormatJSON()
-    :%!python3 -m json.tool
+    ":%!python3 -m json.tool
+    :%!jq .
 endfunction
 
 function! RawJSON()
-    :%delete | 0put =json_encode(json_decode(@@))
-    ":%!jq -c .
+    ":%delete | 0put =json_encode(json_decode(@@))
+    :%!jq -c .
 endfunction
 
 augroup json_ft
