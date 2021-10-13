@@ -24,6 +24,10 @@ try
     set showcmd
     set cursorline
     set cursorcolumn
+
+    " Add or remove a bit extra margin to the left
+    set foldcolumn=0
+
     
 catch
 endtry
