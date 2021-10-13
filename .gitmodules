@@ -25,3 +25,6 @@
 [submodule "oh-my-zsh/custom/themes/powerlevel10k"]
     path = oh-my-zsh/custom/themes/powerlevel10k                                 
     url = https://github.com/romkatv/powerlevel10k.git
+[submodule "vim_runtime/my_plugins/logstash.vim"]
+	path = vim_runtime/my_plugins/logstash.vim
+	url = https://github.com/robbles/logstash.vim.git
