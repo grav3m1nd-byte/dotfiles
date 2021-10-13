@@ -33,7 +33,6 @@ lightline#statusline()	lightline.txt	/*lightline#statusline()*
 lightline#tabline()	lightline.txt	/*lightline#tabline()*
 lightline#toggle()	lightline.txt	/*lightline#toggle()*
 lightline#update()	lightline.txt	/*lightline#update()*
-lightline#update_once()	lightline.txt	/*lightline#update_once()*
 lightline-colorscheme	lightline.txt	/*lightline-colorscheme*
 lightline-component-expansion	lightline.txt	/*lightline-component-expansion*
 lightline-contents	lightline.txt	/*lightline-contents*

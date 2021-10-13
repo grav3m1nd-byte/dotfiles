@@ -43,6 +43,7 @@ gitgutter-:GitGutterNextHunk	gitgutter.txt	/*gitgutter-:GitGutterNextHunk*
 gitgutter-:GitGutterPrevHunk	gitgutter.txt	/*gitgutter-:GitGutterPrevHunk*
 gitgutter-:GitGutterPreviewHunk	gitgutter.txt	/*gitgutter-:GitGutterPreviewHunk*
 gitgutter-:GitGutterQuickFix	gitgutter.txt	/*gitgutter-:GitGutterQuickFix*
+gitgutter-:GitGutterQuickFixCurrentFile	gitgutter.txt	/*gitgutter-:GitGutterQuickFixCurrentFile*
 gitgutter-:GitGutterSignsDisable	gitgutter.txt	/*gitgutter-:GitGutterSignsDisable*
 gitgutter-:GitGutterSignsEnable	gitgutter.txt	/*gitgutter-:GitGutterSignsEnable*
 gitgutter-:GitGutterSignsToggle	gitgutter.txt	/*gitgutter-:GitGutterSignsToggle*
