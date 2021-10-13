@@ -29,7 +29,7 @@ endif
 
 " Colorscheme
 set background=dark
-colorscheme peaksea
+" colorscheme peaksea
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

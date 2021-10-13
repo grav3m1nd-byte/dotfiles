@@ -1,0 +1,23 @@
+[submodule "custom/plugins/zsh-syntax-highlighting"]
+	path = custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+[submodule "custom/plugins/zsh-autosuggestions"]
+	path = custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+
+[submodule "custom/plugins/zsh-completions"]
+	path = custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+
+[submodule "custom/themes/dracula"]
+	path = custom/themes/dracula
+	url = https://github.com/dracula/zsh.git
+
+[submodule "custom/themes/powerlevel10k"]
+	path = custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+
+[submodule "custom/themes/kali"]
+    path = custom/themes/kali
+    url = git@github.com:grav3m1nd-byte/kali.git
