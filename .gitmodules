@@ -10,24 +10,27 @@
 [submodule "oh-my-zsh"]
     path = oh-my-zsh
     url = https://github.com/ohmyzsh/ohmyzsh.git
-[submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-    path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-    path = oh-my-zsh/custom/plugins/zsh-autosuggestions
-    url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "oh-my-zsh/custom/plugins/zsh-completions"]
-    path = oh-my-zsh/custom/plugins/zsh-completions
-    url = https://github.com/zsh-users/zsh-completions.git 
-[submodule "oh-my-zsh/custom/themes/dracula"]
-    path = oh-my-zsh/custom/themes/dracula
-    url = https://github.com/dracula/zsh.git
-[submodule "oh-my-zsh/custom/themes/powerlevel10k"]
-    path = oh-my-zsh/custom/themes/powerlevel10k
-    url = https://github.com/romkatv/powerlevel10k.git$
-[submodule "oh-my-zsh/custom/themes/kali"]
-    path = oh-my-zsh/custom/themes/kali
-    url = git@github.com:grav3m1nd-byte/kali.git
+#[submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+#    path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+#    url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+#[submodule "oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+#    path = oh-my-zsh/custom/plugins/zsh-autosuggestions
+#    url = https://github.com/zsh-users/zsh-autosuggestions.git
+#[submodule "oh-my-zsh/custom/plugins/zsh-completions"]
+#    path = oh-my-zsh/custom/plugins/zsh-completions
+#    url = https://github.com/zsh-users/zsh-completions.git 
+#[submodule "oh-my-zsh/custom/themes/dracula"]
+#    path = oh-my-zsh/custom/themes/dracula
+#    url = https://github.com/dracula/zsh.git
+#[submodule "oh-my-zsh/custom/themes/powerlevel10k"]
+#    path = oh-my-zsh/custom/themes/powerlevel10k
+#    url = https://github.com/romkatv/powerlevel10k.git
+#[submodule "oh-my-zsh/custom/themes/kali"]
+#    path = oh-my-zsh/custom/themes/kali
+#    url = git@github.com:grav3m1nd-byte/kali.git
 [submodule "vim_runtime/my_plugins/logstash.vim"]
     path = vim_runtime/my_plugins/logstash.vim
     url = https://github.com/robbles/logstash.vim.git
+[submodule "vim_runtime/my_plugins/csv.vim"]
+	path = vim_runtime/my_plugins/csv.vim
+	url = https://github.com/chrisbra/csv.vim
