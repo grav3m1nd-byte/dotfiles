@@ -21,6 +21,7 @@ try
     " Colorscheme
     set background=dark
     colorscheme peaksea
+    set foldcolumn=0
 
     set showcmd
     set cursorline
@@ -107,7 +108,8 @@ try
     let g:syntastic_enable_perl_checker = 1
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
-    let g:syntastic_yaml_checkers = ['yamllint']
+    let g:syntastic_yaml_checkers = ['yamllint','kube-linter']
+    let g:syntastic_markdown_checkers = ['markdownlint']
 "    let g:syntastic_json_checkers = ['jsonlint', 'jsonval'] 
     map <leader>sc :SyntasticCheck<cr>
 catch
@@ -116,7 +118,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YAML Section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JSON Formatting
@@ -131,20 +133,49 @@ function! RawJSON()
     :%!jq -c .
 endfunction
 
+function! JSON2YAML()
+    :%!yq e -P -
+endfunction
+
 augroup json_ft
     autocmd BufNewFile,BufRead *.ndjson set filetype=json 
     autocmd FileType json nmap <Leader>jsp :call FormatJSON()<cr>
     autocmd FileType json nmap <Leader>jsr :call RawJSON()<cr>
+    autocmd FileType json nmap <Leader>j2y :call JSON2YAML()<cr>
     autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 augroup END
 
 command! -range JSONRaw <line1>,<line2>call RawJSON()
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
+command! -range JSON2YAML <line1>,<line2>call JSON2YAML()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => XML Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! FormatXML()
+    :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+endfunction
+
+augroup xml_ft
+    autocmd FileType xml nmap <Leader>xp :call FormatXML()<cr>
+    autocmd FileType xml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
+
+command! -range XMLFormat <line1>,<line2>call FormatXML()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Logstash Config Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType logstash setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CSV Config Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup csv_ft
+    autocmd BufNewFile,BufRead *.csv set filetype=csv
+    let b:csv_thousands_sep = ','
+    let b:csv_decimal_sep = '.'
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons

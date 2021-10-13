@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jxberrios/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,16 +74,18 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     colored-man-pages
     common-aliases
+    brew
     docker
-    gcloud
     git
     git-extras
     git-prompt
+    helm
     history-substring-search
+    kubectl
+    kube-ps1
     zsh-completions
     zsh-interactive-cd
     zsh-navigation-tools
-    zsh_reload
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -273,3 +275,21 @@ fi
 ZSH_DISABLE_COMPFIX="true"
 
 source $ZSH/oh-my-zsh.sh
+
+# Azure-CLI Autocomplete
+if [ -f /usr/local/etc/bash_completion.d/az ]; then
+    autoload -U +X bashcompinit && bashcompinit
+    source /usr/local/etc/bash_completion.d/az
+fi
+
+# Google-Cloud-SDK Autocomplete
+if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && \
+    [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]; then
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# Netskope CA Certificate file
+if [ -f '/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem' ]; then
+    export REQUESTS_CA_BUNDLE='/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem'
+fi

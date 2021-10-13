@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $EUID -ne 0 ]]; then
+if [[ $EUID -ne 0 ]] && [[ ! -z $ITERM_PROFILE ]]; then
   #COWS=(/usr/local/share/cows/*.cow)
   #RAND_COW=$(($RANDOM % $(find /usr/local/share/cows/ -name "*.cow" | wc -l)))
 
