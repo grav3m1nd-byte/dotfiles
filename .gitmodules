@@ -1,0 +1,9 @@
+[submodule "Linux/vim/vim_runtime/my_plugins/onedark.vim"]
+	path = vim_runtime/my_plugins/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
+[submodule "Linux/vim/vim_runtime/my_plugins/syntastic"]
+	path = vim_runtime/my_plugins/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "Linux/vim/vim_runtime/my_plugins/vim-devicons"]
+	path = vim_runtime/my_plugins/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
