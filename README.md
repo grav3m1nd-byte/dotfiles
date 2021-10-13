@@ -67,3 +67,5 @@ $ ln -s dotfiles/vim_runtime ~/.vim_runtime
 
 $ ln -s dotfiles/motd-mac ~/.motd
 ```
+> To use these inside the root user context (only recommended for advanced users and at your own risk), create the same symlinks as root but use the full path to these files and directories.
+
