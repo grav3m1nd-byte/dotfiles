@@ -131,9 +131,9 @@ export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 export LC_ALL="en_US.UTF-8"
 
 # Using xiong-chiamiov-plus Theme
-# ZSH_THEME='kali/kali'
-ZSH_THEME='powerlevel10k/powerlevel10k'
-POWERLEVEL9K_MODE='nerdfont-complete'
+ ZSH_THEME='kali/kali'
+#ZSH_THEME='powerlevel10k/powerlevel10k'
+#POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Powerlevel9k Configurations
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
