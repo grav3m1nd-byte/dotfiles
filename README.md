@@ -48,11 +48,11 @@ $ cat .gitmodules | grep -A1 -E "oh-my-zsh\/" | sed -e 's/--//' -e 's/oh-my-zsh\
     url = git@github.com:grav3m1nd-byte/kali.git
 
 $ cd oh-my-zsh/ && \
-    git submodule update add https://github.com/zsh-users/zsh-syntax-highlighting.git custom/plugins/zsh-syntax-highlighting && \
-     git submodule add -f https://github.com/zsh-users/zsh-autosuggestions.git custom/plugins/zsh-autosuggestions && \
-     git submodule add -f https://github.com/zsh-users/zsh-completions.git custom/plugins/zsh-completions && \
-     git submodule add -f https://github.com/dracula/zsh.git custom/themes/dracula && \
-     git submodule add -f  https://github.com/romkatv/powerlevel10k.git custom/themes/powerlevel10k
+    git submodule add -f https://github.com/zsh-users/zsh-syntax-highlighting.git custom/plugins/zsh-syntax-highlighting && \
+    git submodule add -f https://github.com/zsh-users/zsh-autosuggestions.git custom/plugins/zsh-autosuggestions && \
+    git submodule add -f https://github.com/zsh-users/zsh-completions.git custom/plugins/zsh-completions && \
+    git submodule add -f https://github.com/dracula/zsh.git custom/themes/dracula && \
+    git submodule add -f  https://github.com/romkatv/powerlevel10k.git custom/themes/powerlevel10k
 ```
 
 ### Create Symlinks
