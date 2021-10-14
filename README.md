@@ -1,11 +1,19 @@
 # Dotfiles (under development)
 
-## Installation: Clone the Repo
+## Installation:
+Clone the Repo into your home directory
 ```shell
-$ git clone https://github.com/grav3m1nd-byte/dotfiles.git
+$ git clone https://github.com/grav3m1nd-byte/dotfiles.git $HOME/dotfiles
 ```
 
 ### Update Repository Submodules
+
+Before starting, go to the dotfiles directory:
+```shell
+$ cd $HOME/dotfiles
+```
+
+Then, run the following:
 ```shell
 $ git submodule update --init oh-my-zsh
 
@@ -57,15 +65,15 @@ $ cd oh-my-zsh/ && \
 
 ### Create Symlinks
 ```shell
-$ ln -s dotfiles/zshrc-mac ~/.zshrc
+$ ln -s ~/dotfiles/zshrc-mac ~/.zshrc
 
-$ ln -s dotfiles/oh-my-zsh ~/.oh-my-zsh
+$ ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
-$ ln -s dotfiles/vimrc-mac ~/.vimrc
+$ ln -s ~/dotfiles/vimrc-mac ~/.vimrc
 
-$ ln -s dotfiles/vim_runtime ~/.vim_runtime
+$ ln -s ~/dotfiles/vim_runtime ~/.vim_runtime
 
-$ ln -s dotfiles/motd-mac ~/.motd
+$ ln -s ~/dotfiles/motd-mac ~/.motd
 ```
 > To use these inside the root user context (only recommended for advanced users and at your own risk), create the same symlinks as root but use the full path to these files and directories.
 
