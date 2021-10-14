@@ -132,20 +132,35 @@ function! RawJSON()
     :%!jq -c .
 endfunction
  
+function! JSON2YAML()
+    :%!yq e -P -
+endfunction
+ 
 augroup json_ft
-    autocmd BufNewFile,BufRead *.ndjson set filetype=json
+    autocmd BufNewFile,BufRead *.ndjson set filetype=json 
     autocmd FileType json nmap <Leader>jsp :call FormatJSON()<cr>
     autocmd FileType json nmap <Leader>jsr :call RawJSON()<cr>
+    autocmd FileType json nmap <Leader>j2y :call JSON2YAML()<cr>
     autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 augroup END
  
 command! -range JSONRaw <line1>,<line2>call RawJSON()
 command! -range JSONFormat <line1>,<line2>call FormatJSON()
+command! -range JSON2YAML <line1>,<line2>call JSON2YAML()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Logstash Config Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType logstash setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CSV Config Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup csv_ft
+    autocmd BufNewFile,BufRead *.csv set filetype=csv
+    let b:csv_thousands_sep = ','
+    let b:csv_decimal_sep = '.'
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
