@@ -79,6 +79,7 @@ plugins=(
     git
     git-extras
     git-prompt
+    gpg-agent
     helm
     history-substring-search
     kubectl
@@ -292,4 +293,9 @@ fi
 # Netskope CA Certificate file
 if [ -f '/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem' ]; then
     export REQUESTS_CA_BUNDLE='/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem'
+fi
+
+# Adding Netskope Certs for NodeJS and related
+if [ -f '/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem' ]; then
+    export NODE_EXTRA_CA_CERTS='/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem'
 fi
