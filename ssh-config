@@ -1,3 +1,5 @@
+# Add or link file to $HOME/.ssh/config
+
 Host github.com
     # Username for remote SSH user (For GitHub, everyone uses the name `git`)
     User git
