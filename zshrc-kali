@@ -77,6 +77,7 @@ plugins=(
     git
     git-extras
     git-prompt
+    gpg-agent
     history-substring-search
     zsh-interactive-cd
     zsh-navigation-tools
