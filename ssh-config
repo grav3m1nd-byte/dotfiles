@@ -1,0 +1,20 @@
+Host github.com
+    # Username for remote SSH user (For GitHub, everyone uses the name `git`)
+    User git
+
+    # The host that has the remote Git repository
+    Hostname github.com
+
+    # Adding ssh key to ssh-agent
+    AddKeysToAgent yes
+
+    # Adding SSH Key to Mac keychain
+    # Uncomment if using in macOS
+    #UseKeychain yes
+
+    # Configuring Authentication type
+    PreferredAuthentications publickey
+
+    # Path to your private SSH key
+    # Might be needed when having multiple ssh key files
+    #IdentityFile ~/.ssh/id_rsa
