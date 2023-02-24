@@ -74,7 +74,7 @@ command! -nargs=1 -complete=command TBrowseOutput call tlib#cmd#BrowseOutput(<q-
 "
 " EXAMPLES: >
 "   TBrowseScriptnames 
-command! -nargs=1 -complete=command TBrowseScriptnames call tlib#cmd#TBrowseScriptnames()
+command! -nargs=+ -complete=command TBrowseScriptnames call tlib#cmd#TBrowseScriptnames()
 
 
 " :display: :Tlibtrace GUARD, VAR1, VAR2...

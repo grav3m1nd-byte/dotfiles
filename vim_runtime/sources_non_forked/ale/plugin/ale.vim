@@ -24,8 +24,10 @@ endif
 if !s:has_features
     " Only output a warning if editing some special files.
     if index(['', 'gitcommit'], &filetype) == -1
-        execute 'echoerr ''ALE requires NeoVim >= 0.2.0 or Vim 8 with +timers +job +channel'''
-        execute 'echoerr ''Please update your editor appropriately.'''
+        " no-custom-checks
+        echoerr 'ALE requires NeoVim >= 0.2.0 or Vim 8 with +timers +job +channel'
+        " no-custom-checks
+        echoerr 'Please update your editor appropriately.'
     endif
 
     " Stop here, as it won't work.
@@ -125,8 +127,8 @@ let g:ale_echo_cursor = get(g:, 'ale_echo_cursor', 1)
 " This flag can be set to 1 to automatically show errors in the preview window.
 let g:ale_cursor_detail = get(g:, 'ale_cursor_detail', 0)
 
-" This flag can be set to 1 to enable virtual text when the cursor moves.
-let g:ale_virtualtext_cursor = get(g:, 'ale_virtualtext_cursor', 0)
+" This flag can be changed to disable/enable virtual text.
+let g:ale_virtualtext_cursor = get(g:, 'ale_virtualtext_cursor', (has('nvim-0.3.2') || has('patch-9.0.0297') && has('textprop') && has('popupwin')) ? 'all' : 'disabled')
 
 " This flag can be set to 1 to enable LSP hover messages at the cursor.
 let g:ale_hover_cursor = get(g:, 'ale_hover_cursor', 1)
@@ -150,10 +152,11 @@ let g:ale_hover_to_floating_preview = get(g:, 'ale_hover_to_floating_preview', 0
 " Detail uses floating windows in Neovim
 let g:ale_detail_to_floating_preview = get(g:, 'ale_detail_to_floating_preview', 0)
 
-" Border setting for floating preview windows in Neovim
-" The element in the list presents - horizontal, top, top-left, top-right,
-" bottom-right and bottom-left
-let g:ale_floating_window_border = get(g:, 'ale_floating_window_border', ['|', '-', '+', '+', '+', '+'])
+" Border setting for floating preview windows
+" The elements in the list set the characters for the left, top, top-left,
+" top-right, bottom-right, bottom-left, right, and bottom of the border
+" respectively
+let g:ale_floating_window_border = get(g:, 'ale_floating_window_border', ['|', '-', '+', '+', '+', '+', '|', '-'])
 
 " This flag can be set to 0 to disable warnings for trailing whitespace
 let g:ale_warn_about_trailing_whitespace = get(g:, 'ale_warn_about_trailing_whitespace', 1)
@@ -175,6 +178,10 @@ let g:ale_python_auto_pipenv = get(g:, 'ale_python_auto_pipenv', 0)
 " Enable automatic detection of poetry for Python linters.
 let g:ale_python_auto_poetry = get(g:, 'ale_python_auto_poetry', 0)
 
+" Enable automatic adjustment of environment variables for Python linters.
+" The variables are set based on ALE's virtualenv detection.
+let g:ale_python_auto_virtualenv = get(g:, 'ale_python_auto_virtualenv', 0)
+
 " This variable can be overridden to set the GO111MODULE environment variable.
 let g:ale_go_go111module = get(g:, 'ale_go_go111module', '')
 
@@ -183,6 +190,15 @@ let g:ale_deno_executable = get(g:, 'ale_deno_executable', 'deno')
 
 " If 1, enable a popup menu for commands.
 let g:ale_popup_menu_enabled = get(g:, 'ale_popup_menu_enabled', has('gui_running'))
+
+" If 1, disables ALE's built in error display. Instead, all errors are piped
+" to the diagnostics API.
+let g:ale_use_neovim_diagnostics_api = get(g:, 'ale_use_neovim_diagnostics_api', 0)
+
+if g:ale_use_neovim_diagnostics_api && !has('nvim-0.6')
+    " no-custom-checks
+    echoerr('Setting g:ale_use_neovim_diagnostics_api to 1 requires Neovim 0.6+.')
+endif
 
 if g:ale_set_balloons is 1 || g:ale_set_balloons is# 'hover'
     call ale#balloon#Enable()
@@ -228,6 +244,10 @@ command! -bar ALELint :call ale#Queue(0, 'lint_file')
 " Stop current jobs when linting.
 command! -bar ALELintStop :call ale#engine#Stop(bufnr(''))
 
+" Commands to manually populate the quickfixes.
+command! -bar ALEPopulateQuickfix :call ale#list#ForcePopulateErrorList(1)
+command! -bar ALEPopulateLocList  :call ale#list#ForcePopulateErrorList(0)
+
 " Define a command to get information about current filetype.
 command! -bar ALEInfo :call ale#debugging#Info()
 " The same, but copy output to your clipboard.
@@ -245,6 +265,9 @@ command! -bar -nargs=* ALEGoToDefinition :call ale#definition#GoToCommandHandler
 
 " Go to type definition for tsserver and LSP
 command! -bar -nargs=* ALEGoToTypeDefinition :call ale#definition#GoToCommandHandler('type', <f-args>)
+
+" Go to implementation for tsserver and LSP
+command! -bar -nargs=* ALEGoToImplementation :call ale#definition#GoToCommandHandler('implementation', <f-args>)
 
 " Repeat a previous selection in the preview window
 command! -bar ALERepeatSelection :call ale#preview#RepeatSelection()
@@ -312,7 +335,11 @@ nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinition -vsp
 nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition<Return>
 nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinition -tab<Return>
 nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinition -split<Return>
-nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinitionIn -vsplit<Return>
+nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinition -vsplit<Return>
+nnoremap <silent> <Plug>(ale_go_to_implementation) :ALEGoToImplementation<Return>
+nnoremap <silent> <Plug>(ale_go_to_implementation_in_tab) :ALEGoToImplementation -tab<Return>
+nnoremap <silent> <Plug>(ale_go_to_implementation_in_split) :ALEGoToImplementation -split<Return>
+nnoremap <silent> <Plug>(ale_go_to_implementation_in_vsplit) :ALEGoToImplementation -vsplit<Return>
 nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences<Return>
 nnoremap <silent> <Plug>(ale_hover) :ALEHover<Return>
 nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation<Return>
