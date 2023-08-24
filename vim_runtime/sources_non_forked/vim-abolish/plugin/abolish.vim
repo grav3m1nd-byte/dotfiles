@@ -23,8 +23,8 @@ endif
 " }}}1
 " Utility functions {{{1
 
-function! s:function(name)
-  return function(substitute(a:name,'^s:',matchstr(expand('<sfile>'), '<SNR>\d\+_'),''))
+function! s:function(name) abort
+  return function(substitute(a:name,'^s:',matchstr(expand('<sfile>'), '.*\zs<SNR>\d\+_'),''))
 endfunction
 
 function! s:send(self,func,...)
@@ -619,7 +619,7 @@ endfunction
 
 nnoremap <expr> <Plug>(abolish-coerce) <SID>coerce(nr2char(getchar()))
 vnoremap <expr> <Plug>(abolish-coerce) <SID>coerce(nr2char(getchar()))
-nnoremap <expr> <plug>(abolish-coerce-word) <SID>coerce(nr2char(getchar())).'iw'
+nnoremap <expr> <Plug>(abolish-coerce-word) <SID>coerce(nr2char(getchar())).'iw'
 
 " }}}1
 
