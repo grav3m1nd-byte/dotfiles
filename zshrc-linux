@@ -79,6 +79,7 @@ plugins=(
     git
     git-extras
     git-prompt
+    gpg-agent
     history-substring-search
     kubectl
     kube-ps1
@@ -288,6 +289,8 @@ fi
 
 # Ignore writable files flagged by compaudit
 ZSH_DISABLE_COMPFIX="true"
+
+#export DISPLAY=:0.0
 
 source $ZSH/oh-my-zsh.sh
 
