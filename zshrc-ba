@@ -71,7 +71,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    archlinux
+    alias-finder
     colored-man-pages
+    command-not-found
     common-aliases
     docker
     git
@@ -90,17 +93,21 @@ plugins=(
 
 # User configuration
 
+# Default Archlinux zshrc variables
+export LD_PRELOAD=""
+export PATH="$HOME/bin:/usr/lib/ccache/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,6 +120,61 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Impacket Aliases
+alias impacket-Get-GPPPassword="/usr/bin/Get-GPPPassword.py"
+alias impacket-GetADUsers="/usr/bin/GetADUsers.py"
+alias impacket-GetNPUsers="/usr/bin/GetNPUsers.py"
+alias impacket-GetUserSPNs="/usr/bin/GetUserSPNs.py"
+alias impacket-addcomputer="/usr/bin/addcomputer.py"
+alias impacket-atexec="/usr/bin/atexec.py"
+alias impacket-dcomexec="/usr/bin/dcomexec.py"
+alias impacket-dpapi="/usr/bin/dpapi.py"
+alias impacket-esentutl="/usr/bin/esentutl.py"
+alias impacket-exchanger="/usr/bin/exchanger.py"
+alias impacket-findDelegation="/usr/bin/findDelegation.py"
+alias impacket-getArch="/usr/bin/getArch.py"
+alias impacket-getPac="/usr/bin/getPac.py"
+alias impacket-getST="/usr/bin/getST.py"
+alias impacket-getTGT="/usr/bin/getTGT.py"
+alias impacket-goldenPac="/usr/bin/goldenPac.py"
+alias impacket-karmaSMB="/usr/bin/karmaSMB.py"
+alias impacket-kintercept="/usr/bin/kintercept.py"
+alias impacket-lookupsid="/usr/bin/lookupsid.py"
+alias impacket-mimikatz="/usr/bin/mimikatz.py"
+alias impacket-mqtt_check="/usr/bin/mqtt_check.py"
+alias impacket-mssqlclient="/usr/bin/mssqlclient.py"
+alias impacket-mssqlinstance="/usr/bin/mssqlinstance.py"
+alias impacket-netview="/usr/bin/netview.py"
+alias impacket-nmapAnswerMachine="/usr/bin/nmapAnswerMachine.py"
+alias impacket-ntfs-read="/usr/bin/ntfs-read.py"
+alias impacket-ntlmrelayx="/usr/bin/ntlmrelayx.py"
+alias impacket-ping="/usr/bin/ping.py"
+alias impacket-ping6="/usr/bin/ping6.py"
+alias impacket-psexec="/usr/bin/psexec.py"
+alias impacket-raiseChild="/usr/bin/raiseChild.py"
+alias impacket-rbcd="/usr/bin/rbcd.py"
+alias impacket-rdp_check="/usr/bin/rdp_check.py"
+alias impacket-reg="/usr/bin/reg.py"
+alias impacket-registry-read="/usr/bin/registry-read.py"
+alias impacket-rpcdump="/usr/bin/rpcdump.py"
+alias impacket-rpcmap="/usr/bin/rpcmap.py"
+alias impacket-sambaPipe="/usr/bin/sambaPipe.py"
+alias impacket-samrdump="/usr/bin/samrdump.py"
+alias impacket-secretsdump="/usr/bin/secretsdump.py"
+alias impacket-services="/usr/bin/services.py"
+alias impacket-smbclient="/usr/bin/smbclient.py"
+alias impacket-smbexec="/usr/bin/smbexec.py"
+alias impacket-smbpasswd="/usr/bin/smbpasswd.py"
+alias impacket-smbrelayx="/usr/bin/smbrelayx.py"
+alias impacket-smbserver="/usr/bin/smbserver.py"
+alias impacket-sniff="/usr/bin/sniff.py"
+alias impacket-sniffer="/usr/bin/sniffer.py"
+alias impacket-split="/usr/bin/split.py"
+alias impacket-ticketConverter="/usr/bin/ticketConverter.py"
+alias impacket-ticketer="/usr/bin/ticketer.py"
+alias impacket-wmiexec="/usr/bin/wmiexec.py"
+alias impacket-wmipersist="/usr/bin/wmipersist.py"
+alias impacket-wmiquery="/usr/bin/wmiquery.py"
 
 # History configurations
 HISTFILE=~/.zsh_history
@@ -125,18 +187,22 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history         # share command history data
 
 # For compilers to find ncurses you may need to set:
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ncurses/lib"
-export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+#export PATH="/usr/local/opt/ncurses/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+#export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
 export LC_ALL="en_US.UTF-8"
 
-ZSH_THEME='kali/kali'
+#ZSH_THEME='kali/kali'
+ZSH_THEME='blackarch/blackarch'
 
 # Enable completion features
 autoload -Uz compinit && compinit
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+
+# Automatically find new executables after installation
+zstyle ':completion:*' rehash true
 
 # Messages/warnings format
 zstyle ':completion:*' verbose yes
@@ -212,6 +278,7 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 fi
 
+# zsh-autocompletion settings for fzf
 DISABLE_FZF_AUTO_COMPLETION="true"
 DISABLE_FZF_KEY_BINDINGS="true"
 
@@ -240,10 +307,8 @@ export PATH="${PATH}:/usr/bin/node:/usr/bin/nodejs"
 
 export PATH="${PATH}:${HOME}/.local/bin"
 
-#if [ -f /usr/share/metasploit-framework/config/database.yml ]; then
-#    #MSF_DATABASE_CONFIG='/usr/share/metasploit-framework/config/database.yml'
-#    MSF_DATABASE_CONFIG='~/.msf4/database.yml'
-#fi
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
 
-# Other aliases
-#alias nuclei="${HOME}/go/bin/nuclei"
+# Adding Ruby Gems to PATH
+export PATH="${PATH}:${HOME}/.local/share/gem/ruby/3.0.0/bin"
