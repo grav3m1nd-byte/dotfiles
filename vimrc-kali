@@ -49,45 +49,78 @@ endtry
 " => lightline: my own customizations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive' ],
-      \             [ 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?MyFugitive:""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help" && &readonly)',
-      \   'modified': '(&filetype!="help" && (&modified || !&modifiable))',
-      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-      \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \ },
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \   'fugitive': 'MyFugitive'
-      \ },
-      \ 'separator': { 'left': '', 'right': ' ' },
-      \ 'subseparator': { 'left': '', 'right': '|' }
-      \ }
+    \ 'enable': {
+    \     'statusline': 0,
+	\     'tabline': 0
+	\     }
+    \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'onedark',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'fugitive' ],
+"       \             [ 'readonly', 'filename', 'modified' ] ],
+"       \   'right': [ [ 'syntastic', 'lineinfo' ],
+"       \              [ 'percent' ],
+"       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+"       \ },
+"       \ 'component': {
+"       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+"       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"       \   'fugitive': '%{exists("*FugitiveHead")?MyFugitive:""}'
+"       \ },
+"       \ 'component_visible_condition': {
+"       \   'readonly': '(&filetype!="help" && &readonly)',
+"       \   'modified': '(&filetype!="help" && (&modified || !&modifiable))',
+"       \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+"       \ },
+"       \ 'component_expand': {
+"       \   'syntastic': 'SyntasticStatuslineFlag',
+"       \ },
+"       \ 'component_type': {
+"       \   'syntastic': 'error',
+"       \ },
+"       \ 'component_function': {
+"       \   'filetype': 'MyFiletype',
+"       \   'fileformat': 'MyFileformat',
+"       \   'fugitive': 'MyFugitive'
+"       \ },
+"       \ 'separator': { 'left': '', 'right': ' ' },
+"       \ 'subseparator': { 'left': '', 'right': '|' }
+"       \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_theme = 'onedark'
+let g:airline#extensions#hunks#enabled = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#show_close_button = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.readonly = '🔒'
+let g:airline_symbols.branch = ''
+
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#syntastic#error_symbol = 'E:'
+let g:airline#extensions#syntastic#stl_format_err = '%E{ #%e}'
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#syntastic#get_error(),0)}'
+let g:airline#extensions#syntastic#warning_symbol = 'W:'
+let g:airline#extensions#syntastic#stl_format_warn = '%W{ #%w}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#syntastic#get_warning(),0)}'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-    let g:syntastic_stl_format = '[%E{Err: #%e}%B{ | }%W{Warn: #%w}]'
+"    let g:syntastic_stl_format = '[%E{Err: #%e}%B{ | }%W{Warn: #%w}]'
+    let g:syntastic_enable_highlighting = 1 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 0
@@ -98,15 +131,15 @@ try
     let g:syntastic_error_symbol = '❌'
     let g:syntastic_style_warning_symbol = '❗'
     let g:syntastic_warning_symbol = '❗'
-    let g:syntastic_javascript_checkers = ['jsxcs', 'jsxhint']
+    let g:syntastic_javascript_checkers = ['jslint']
     let g:syntastic_python_checkers = ['pylint']
     let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
     let g:syntastic_enable_perl_checker = 1
     let g:syntastic_vim_checkers = ['vint']
     let g:syntastic_sh_checkers = ['shellcheck', 'sh']
     let g:syntastic_yaml_checkers = ['yamllint']
-    let g:syntastic_c_checkers = ['cppcheck']
-    let g:syntastic_cpp_checkers = ['cppcheck']
+    let g:syntastic_c_checkers = ['cppcheck','splint']
+    let g:syntastic_cpp_checkers = ['cppcheck', 'cpplint']
     let g:syntastic_json_checkers = ['jsonlint']
     map <leader>sc :SyntasticCheck<cr>
 catch
@@ -121,12 +154,44 @@ autocmd FileType yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " => JSON Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! FormatJSON()
-    :%!python3 -m json.tool
+    ":%!python3 -m json.tool
+    :%!jq .
 endfunction
- 
-autocmd FileType json nmap <Leader>js :call FormatJSON()<cr>
-autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-command! -range JSONFormat <line1>,<line2>call FormatJSON() 
+
+function! RawJSON()
+    ":%delete | 0put =json_encode(json_decode(@@))
+    :%!jq -c .
+endfunction
+
+function! JSON2YAML()
+    :%!yq e -P -
+endfunction
+
+augroup json_ft
+    autocmd BufNewFile,BufRead *.ndjson set filetype=json
+    autocmd FileType json nmap <Leader>jsp :call FormatJSON()<cr>
+    autocmd FileType json nmap <Leader>jsr :call RawJSON()<cr>
+    autocmd FileType json nmap <Leader>j2y :call JSON2YAML()<cr>
+    autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
+
+command! -range JSONRaw <line1>,<line2>call RawJSON()
+command! -range JSONFormat <line1>,<line2>call FormatJSON()
+command! -range JSON2YAML <line1>,<line2>call JSON2YAML()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => XML Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! FormatXML()
+    :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+endfunction
+
+augroup xml_ft
+    autocmd FileType xml nmap <Leader>xp :call FormatXML()<cr>
+    autocmd FileType xml setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
+
+command! -range XMLFormat <line1>,<line2>call FormatXML()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DevIcons
@@ -140,6 +205,9 @@ command! -range JSONFormat <line1>,<line2>call FormatJSON()
 let g:webdevicons_enable = 1 
 " adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 1
+" Settings for Airline
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => SnipMate and Completion Menu
