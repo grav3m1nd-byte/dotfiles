@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $EUID -ne 0 ]] && [[ ! -z "$TERMINATOR_UUID" ]]; then
+if [[ $EUID -ne 0 ]] && [[ -n "$TERMINATOR_UUID" ]]; then
     #(printf "Hostname:\t$(hostname -s )\n" && sw_vers) | lolcat
 
     #COWS=(/usr/share/cowsay/cows/*.cow)
@@ -9,7 +9,9 @@ if [[ $EUID -ne 0 ]] && [[ ! -z "$TERMINATOR_UUID" ]]; then
     
     #neofetch && fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat && echo
     #neofetch --ascii_distro macos && fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat && echo
-    neofetch --ascii_distro macos && fortune | lolcat && echo
+    #neofetch --ascii_distro macos && fortune | lolcat && echo
+    fastfetch -l macos --logo-type auto; echo
+    fortune | lolcat && echo
     
     #neofetch --ascii_distro Ubuntu-Budgie --color_blocks off
 fi
