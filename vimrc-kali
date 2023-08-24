@@ -15,7 +15,9 @@ set fileencoding=utf-8
 set fileformats=unix,dos,mac
 
 try
+    set history=5000
     syntax on
+    filetype indent plugin on
 
     " Colorscheme
     set background=dark
@@ -28,6 +30,11 @@ try
     " Add or remove a bit extra margin to the left
     set foldcolumn=0
 
+    " Configuration to set auto completion menu after pressing tab
+    set wildmenu
+    set wildmenu=list:longest
+    " Ignore the following file extensions
+    set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
     
 catch
 endtry
@@ -36,7 +43,7 @@ let g:NERDTreeWinPos = 'left'
 map <leader>BE :BufExplorer<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Statusline Customizations
+" => Tabline & Statusline Customizations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
     set laststatus=2  "Show Statusline
@@ -93,19 +100,33 @@ let g:lightline = {
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#show_tab_count = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+"rename label for buffers (default: 'buffers')
+let g:airline#extensions#tabline#buffers_label = 'b'
+
+"rename label for tabs (default: 'tabs')
+let g:airline#extensions#tabline#tabs_label = 't'
+
 let g:airline#extensions#branch#enabled = 1
 let g:airline_theme = 'onedark'
-let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#hunks#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#show_close_button = 1
+"let g:airline#extensions#tabline#show_close_button = 1
+"let g:airline#extensions#tabline#close_symbol = 'X'
 
+" Enabling Symbols
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.readonly = '🔒'
 let g:airline_symbols.branch = ''
 
+" Syntastic configurations
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#syntastic#error_symbol = 'E:'
 let g:airline#extensions#syntastic#stl_format_err = '%E{ #%e}'
@@ -114,6 +135,28 @@ let g:airline#extensions#syntastic#warning_symbol = 'W:'
 let g:airline#extensions#syntastic#stl_format_warn = '%W{ #%w}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#syntastic#get_warning(),0)}'
 
+" Other but default configurations
+let g:airline_detect_modified = 1
+
+"enable paste detection 
+let g:airline_detect_paste = 1
+"enable crypt detection >
+let g:airline_detect_crypt = 1
+"enable spell detection >
+let g:airline_detect_spell = 1
+"display spelling language when spell detection is enabled
+"(if enough space is available) >
+let g:airline_detect_spelllang = 1
+"Set to 'flag' to get a unicode icon of the relevant country flag instead of
+"the 'spelllang' itself
+"
+"enable iminsert detection >
+let g:airline_detect_iminsert = 1
+"determine whether inactive windows should have the left section collapsed
+"to only the filename of that buffer.  >
+let g:airline_inactive_collapse = 1
+"Use alternative separators for the statusline of inactive windows >
+"let g:airline_inactive_alt_sep = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
@@ -205,9 +248,14 @@ command! -range XMLFormat <line1>,<line2>call FormatXML()
 let g:webdevicons_enable = 1 
 " adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+"let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " Settings for Airline
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+" Enable for Ctrlp
+let g:webdevicons_enable_ctrlp = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => SnipMate and Completion Menu
