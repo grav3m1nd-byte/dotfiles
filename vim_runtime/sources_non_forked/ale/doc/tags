@@ -134,6 +134,7 @@ ale-bazel-buildifier	ale-bazel.txt	/*ale-bazel-buildifier*
 ale-bazel-options	ale-bazel.txt	/*ale-bazel-options*
 ale-bib-bibclean	ale-bib.txt	/*ale-bib-bibclean*
 ale-bib-options	ale-bib.txt	/*ale-bib-options*
+ale-bicep-az_bicep	ale-bicep.txt	/*ale-bicep-az_bicep*
 ale-bicep-bicep	ale-bicep.txt	/*ale-bicep-bicep*
 ale-bicep-options	ale-bicep.txt	/*ale-bicep-options*
 ale-bitbake-oelint_adv	ale-bitbake.txt	/*ale-bitbake-oelint_adv*
@@ -244,6 +245,7 @@ ale-dhall-freeze	ale-dhall.txt	/*ale-dhall-freeze*
 ale-dhall-lint	ale-dhall.txt	/*ale-dhall-lint*
 ale-dhall-options	ale-dhall.txt	/*ale-dhall-options*
 ale-dockerfile-dockerfile_lint	ale-dockerfile.txt	/*ale-dockerfile-dockerfile_lint*
+ale-dockerfile-dockerlinter	ale-dockerfile.txt	/*ale-dockerfile-dockerlinter*
 ale-dockerfile-dprint	ale-dockerfile.txt	/*ale-dockerfile-dprint*
 ale-dockerfile-hadolint	ale-dockerfile.txt	/*ale-dockerfile-hadolint*
 ale-dockerfile-options	ale-dockerfile.txt	/*ale-dockerfile-options*
@@ -266,6 +268,7 @@ ale-erlang-erlc	ale-erlang.txt	/*ale-erlang-erlc*
 ale-erlang-erlfmt	ale-erlang.txt	/*ale-erlang-erlfmt*
 ale-erlang-options	ale-erlang.txt	/*ale-erlang-options*
 ale-erlang-syntaxerl	ale-erlang.txt	/*ale-erlang-syntaxerl*
+ale-eruby-erbformatter	ale-eruby.txt	/*ale-eruby-erbformatter*
 ale-eruby-erblint	ale-eruby.txt	/*ale-eruby-erblint*
 ale-eruby-options	ale-eruby.txt	/*ale-eruby-options*
 ale-eruby-ruumba	ale-eruby.txt	/*ale-eruby-ruumba*
@@ -294,8 +297,6 @@ ale-go-gofumpt	ale-go.txt	/*ale-go-gofumpt*
 ale-go-golangci-lint	ale-go.txt	/*ale-go-golangci-lint*
 ale-go-golangserver	ale-go.txt	/*ale-go-golangserver*
 ale-go-golines	ale-go.txt	/*ale-go-golines*
-ale-go-golint	ale-go.txt	/*ale-go-golint*
-ale-go-gometalinter	ale-go.txt	/*ale-go-gometalinter*
 ale-go-gopls	ale-go.txt	/*ale-go-gopls*
 ale-go-govet	ale-go.txt	/*ale-go-govet*
 ale-go-options	ale-go.txt	/*ale-go-options*
@@ -308,6 +309,8 @@ ale-graphql-eslint	ale-graphql.txt	/*ale-graphql-eslint*
 ale-graphql-gqlint	ale-graphql.txt	/*ale-graphql-gqlint*
 ale-graphql-options	ale-graphql.txt	/*ale-graphql-options*
 ale-graphql-prettier	ale-graphql.txt	/*ale-graphql-prettier*
+ale-groovy-npm-groovy-lint	ale-groovy.txt	/*ale-groovy-npm-groovy-lint*
+ale-groovy-options	ale-groovy.txt	/*ale-groovy-options*
 ale-hack-hack	ale-hack.txt	/*ale-hack-hack*
 ale-hack-hackfmt	ale-hack.txt	/*ale-hack-hackfmt*
 ale-hack-hhast	ale-hack.txt	/*ale-hack-hhast*
@@ -319,6 +322,7 @@ ale-haskell-brittany	ale-haskell.txt	/*ale-haskell-brittany*
 ale-haskell-cabal-ghc	ale-haskell.txt	/*ale-haskell-cabal-ghc*
 ale-haskell-cspell	ale-haskell.txt	/*ale-haskell-cspell*
 ale-haskell-floskell	ale-haskell.txt	/*ale-haskell-floskell*
+ale-haskell-fourmolu	ale-haskell.txt	/*ale-haskell-fourmolu*
 ale-haskell-ghc	ale-haskell.txt	/*ale-haskell-ghc*
 ale-haskell-ghc-mod	ale-haskell.txt	/*ale-haskell-ghc-mod*
 ale-haskell-hdevtools	ale-haskell.txt	/*ale-haskell-hdevtools*
@@ -346,6 +350,7 @@ ale-html-fecs	ale-html.txt	/*ale-html-fecs*
 ale-html-htmlhint	ale-html.txt	/*ale-html-htmlhint*
 ale-html-options	ale-html.txt	/*ale-html-options*
 ale-html-prettier	ale-html.txt	/*ale-html-prettier*
+ale-html-rustywind	ale-html.txt	/*ale-html-rustywind*
 ale-html-stylelint	ale-html.txt	/*ale-html-stylelint*
 ale-html-tidy	ale-html.txt	/*ale-html-tidy*
 ale-html-vscode	ale-html.txt	/*ale-html-vscode*
@@ -457,6 +462,7 @@ ale-make-options	ale-make.txt	/*ale-make-options*
 ale-markdown-cspell	ale-markdown.txt	/*ale-markdown-cspell*
 ale-markdown-dprint	ale-markdown.txt	/*ale-markdown-dprint*
 ale-markdown-markdownlint	ale-markdown.txt	/*ale-markdown-markdownlint*
+ale-markdown-marksman	ale-markdown.txt	/*ale-markdown-marksman*
 ale-markdown-mdl	ale-markdown.txt	/*ale-markdown-mdl*
 ale-markdown-options	ale-markdown.txt	/*ale-markdown-options*
 ale-markdown-pandoc	ale-markdown.txt	/*ale-markdown-pandoc*
@@ -474,6 +480,7 @@ ale-nim-nimlsp	ale-nim.txt	/*ale-nim-nimlsp*
 ale-nim-nimpretty	ale-nim.txt	/*ale-nim-nimpretty*
 ale-nim-options	ale-nim.txt	/*ale-nim-options*
 ale-nix-alejandra	ale-nix.txt	/*ale-nix-alejandra*
+ale-nix-deadnix	ale-nix.txt	/*ale-nix-deadnix*
 ale-nix-nixfmt	ale-nix.txt	/*ale-nix-nixfmt*
 ale-nix-nixpkgs-fmt	ale-nix.txt	/*ale-nix-nixpkgs-fmt*
 ale-nix-options	ale-nix.txt	/*ale-nix-options*
@@ -774,6 +781,7 @@ ale-yaml-prettier	ale-yaml.txt	/*ale-yaml-prettier*
 ale-yaml-spectral	ale-yaml.txt	/*ale-yaml-spectral*
 ale-yaml-swaglint	ale-yaml.txt	/*ale-yaml-swaglint*
 ale-yaml-yamlfix	ale-yaml.txt	/*ale-yaml-yamlfix*
+ale-yaml-yamlfmt	ale-yaml.txt	/*ale-yaml-yamlfmt*
 ale-yaml-yamllint	ale-yaml.txt	/*ale-yaml-yamllint*
 ale-yang-lsp	ale-yang.txt	/*ale-yang-lsp*
 ale-yang-options	ale-yang.txt	/*ale-yang-options*
@@ -809,6 +817,8 @@ b:ale_awk_gawk_options	ale-awk.txt	/*b:ale_awk_gawk_options*
 b:ale_bazel_buildifier_executable	ale-bazel.txt	/*b:ale_bazel_buildifier_executable*
 b:ale_bazel_buildifier_options	ale-bazel.txt	/*b:ale_bazel_buildifier_options*
 b:ale_bazel_buildifier_use_global	ale-bazel.txt	/*b:ale_bazel_buildifier_use_global*
+b:ale_bicep_az_bicep_executable	ale-bicep.txt	/*b:ale_bicep_az_bicep_executable*
+b:ale_bicep_az_bicep_options	ale-bicep.txt	/*b:ale_bicep_az_bicep_options*
 b:ale_bicep_bicep_executable	ale-bicep.txt	/*b:ale_bicep_bicep_executable*
 b:ale_bicep_bicep_options	ale-bicep.txt	/*b:ale_bicep_bicep_options*
 b:ale_c_always_make	ale-c.txt	/*b:ale_c_always_make*
@@ -935,6 +945,8 @@ b:ale_dhall_options	ale-dhall.txt	/*b:ale_dhall_options*
 b:ale_disable_lsp	ale.txt	/*b:ale_disable_lsp*
 b:ale_dockerfile_dockerfile_lint_executable	ale-dockerfile.txt	/*b:ale_dockerfile_dockerfile_lint_executable*
 b:ale_dockerfile_dockerfile_lint_options	ale-dockerfile.txt	/*b:ale_dockerfile_dockerfile_lint_options*
+b:ale_dockerfile_dockerlinter_executable	ale-dockerfile.txt	/*b:ale_dockerfile_dockerlinter_executable*
+b:ale_dockerfile_dockerlinter_options	ale-dockerfile.txt	/*b:ale_dockerfile_dockerlinter_options*
 b:ale_dockerfile_hadolint_image	ale-dockerfile.txt	/*b:ale_dockerfile_hadolint_image*
 b:ale_dockerfile_hadolint_options	ale-dockerfile.txt	/*b:ale_dockerfile_hadolint_options*
 b:ale_dockerfile_hadolint_use_docker	ale-dockerfile.txt	/*b:ale_dockerfile_hadolint_use_docker*
@@ -973,6 +985,7 @@ b:ale_erlang_erlc_options	ale-erlang.txt	/*b:ale_erlang_erlc_options*
 b:ale_erlang_erlfmt_executable	ale-erlang.txt	/*b:ale_erlang_erlfmt_executable*
 b:ale_erlang_erlfmt_options	ale-erlang.txt	/*b:ale_erlang_erlfmt_options*
 b:ale_erlang_syntaxerl_executable	ale-erlang.txt	/*b:ale_erlang_syntaxerl_executable*
+b:ale_eruby_erbformatter_executable	ale-eruby.txt	/*b:ale_eruby_erbformatter_executable*
 b:ale_eruby_erblint_executable	ale-eruby.txt	/*b:ale_eruby_erblint_executable*
 b:ale_eruby_ruumba_executable	ale-eruby.txt	/*b:ale_eruby_ruumba_executable*
 b:ale_exclude_highlights	ale.txt	/*b:ale_exclude_highlights*
@@ -1008,11 +1021,6 @@ b:ale_go_golangci_lint_executable	ale-go.txt	/*b:ale_go_golangci_lint_executable
 b:ale_go_golangci_lint_options	ale-go.txt	/*b:ale_go_golangci_lint_options*
 b:ale_go_golangci_lint_package	ale-go.txt	/*b:ale_go_golangci_lint_package*
 b:ale_go_golines_options	ale-go.txt	/*b:ale_go_golines_options*
-b:ale_go_golint_executable	ale-go.txt	/*b:ale_go_golint_executable*
-b:ale_go_golint_options	ale-go.txt	/*b:ale_go_golint_options*
-b:ale_go_gometalinter_executable	ale-go.txt	/*b:ale_go_gometalinter_executable*
-b:ale_go_gometalinter_lint_package	ale-go.txt	/*b:ale_go_gometalinter_lint_package*
-b:ale_go_gometalinter_options	ale-go.txt	/*b:ale_go_gometalinter_options*
 b:ale_go_gopls_executable	ale-go.txt	/*b:ale_go_gopls_executable*
 b:ale_go_gopls_fix_executable	ale-go.txt	/*b:ale_go_gopls_fix_executable*
 b:ale_go_gopls_fix_options	ale-go.txt	/*b:ale_go_gopls_fix_options*
@@ -1029,6 +1037,9 @@ b:ale_go_staticcheck_executable	ale-go.txt	/*b:ale_go_staticcheck_executable*
 b:ale_go_staticcheck_lint_package	ale-go.txt	/*b:ale_go_staticcheck_lint_package*
 b:ale_go_staticcheck_options	ale-go.txt	/*b:ale_go_staticcheck_options*
 b:ale_go_staticcheck_use_global	ale-go.txt	/*b:ale_go_staticcheck_use_global*
+b:ale_groovy_npmgroovylint_executable	ale-groovy.txt	/*b:ale_groovy_npmgroovylint_executable*
+b:ale_groovy_npmgroovylint_fix_options	ale-groovy.txt	/*b:ale_groovy_npmgroovylint_fix_options*
+b:ale_groovy_npmgroovylint_options	ale-groovy.txt	/*b:ale_groovy_npmgroovylint_options*
 b:ale_hack_hack_executable	ale-hack.txt	/*b:ale_hack_hack_executable*
 b:ale_hack_hackfmt_options	ale-hack.txt	/*b:ale_hack_hackfmt_options*
 b:ale_hack_hhast_executable	ale-hack.txt	/*b:ale_hack_hhast_executable*
@@ -1037,6 +1048,8 @@ b:ale_handlebars_embertemplatelint_use_global	ale-handlebars.txt	/*b:ale_handleb
 b:ale_haskell_brittany_executable	ale-haskell.txt	/*b:ale_haskell_brittany_executable*
 b:ale_haskell_cabal_ghc_options	ale-haskell.txt	/*b:ale_haskell_cabal_ghc_options*
 b:ale_haskell_floskell_executable	ale-haskell.txt	/*b:ale_haskell_floskell_executable*
+b:ale_haskell_fourmolu_executable	ale-haskell.txt	/*b:ale_haskell_fourmolu_executable*
+b:ale_haskell_fourmolu_options	ale-haskell.txt	/*b:ale_haskell_fourmolu_options*
 b:ale_haskell_ghc_mod_executable	ale-haskell.txt	/*b:ale_haskell_ghc_mod_executable*
 b:ale_haskell_ghc_options	ale-haskell.txt	/*b:ale_haskell_ghc_options*
 b:ale_haskell_hdevtools_executable	ale-haskell.txt	/*b:ale_haskell_hdevtools_executable*
@@ -1065,6 +1078,8 @@ b:ale_html_beautify_use_global	ale-html.txt	/*b:ale_html_beautify_use_global*
 b:ale_html_htmlhint_executable	ale-html.txt	/*b:ale_html_htmlhint_executable*
 b:ale_html_htmlhint_options	ale-html.txt	/*b:ale_html_htmlhint_options*
 b:ale_html_htmlhint_use_global	ale-html.txt	/*b:ale_html_htmlhint_use_global*
+b:ale_html_rustywind_executable	ale-html.txt	/*b:ale_html_rustywind_executable*
+b:ale_html_rustywind_options	ale-html.txt	/*b:ale_html_rustywind_options*
 b:ale_html_stylelint_executable	ale-html.txt	/*b:ale_html_stylelint_executable*
 b:ale_html_stylelint_options	ale-html.txt	/*b:ale_html_stylelint_options*
 b:ale_html_stylelint_use_global	ale-html.txt	/*b:ale_html_stylelint_use_global*
@@ -1174,6 +1189,7 @@ b:ale_lua_stylua_options	ale-lua.txt	/*b:ale_lua_stylua_options*
 b:ale_make_checkmake_config	ale-make.txt	/*b:ale_make_checkmake_config*
 b:ale_markdown_markdownlint_executable	ale-markdown.txt	/*b:ale_markdown_markdownlint_executable*
 b:ale_markdown_markdownlint_options	ale-markdown.txt	/*b:ale_markdown_markdownlint_options*
+b:ale_markdown_marksman_executable	ale-markdown.txt	/*b:ale_markdown_marksman_executable*
 b:ale_markdown_mdl_executable	ale-markdown.txt	/*b:ale_markdown_mdl_executable*
 b:ale_markdown_mdl_options	ale-markdown.txt	/*b:ale_markdown_mdl_options*
 b:ale_markdown_pandoc_executable	ale-markdown.txt	/*b:ale_markdown_pandoc_executable*
@@ -1191,6 +1207,8 @@ b:ale_nim_nimpretty_executable	ale-nim.txt	/*b:ale_nim_nimpretty_executable*
 b:ale_nim_nimpretty_options	ale-nim.txt	/*b:ale_nim_nimpretty_options*
 b:ale_nix_alejandra_executable	ale-nix.txt	/*b:ale_nix_alejandra_executable*
 b:ale_nix_alejandra_options	ale-nix.txt	/*b:ale_nix_alejandra_options*
+b:ale_nix_deadnix_executable	ale-nix.txt	/*b:ale_nix_deadnix_executable*
+b:ale_nix_deadnix_options	ale-nix.txt	/*b:ale_nix_deadnix_options*
 b:ale_nix_fix_check_executable	ale-nix.txt	/*b:ale_nix_fix_check_executable*
 b:ale_nix_nixfmt_executable	ale-nix.txt	/*b:ale_nix_nixfmt_executable*
 b:ale_nix_nixfmt_options	ale-nix.txt	/*b:ale_nix_nixfmt_options*
@@ -1609,8 +1627,11 @@ b:ale_vim_vimls_use_global	ale-vim.txt	/*b:ale_vim_vimls_use_global*
 b:ale_vim_vint_executable	ale-vim.txt	/*b:ale_vim_vint_executable*
 b:ale_vim_vint_show_style_issues	ale-vim.txt	/*b:ale_vim_vint_show_style_issues*
 b:ale_virtualenv_dir_names	ale.txt	/*b:ale_virtualenv_dir_names*
+b:ale_virtualtext_column	ale.txt	/*b:ale_virtualtext_column*
 b:ale_virtualtext_delay	ale.txt	/*b:ale_virtualtext_delay*
+b:ale_virtualtext_maxcolumn	ale.txt	/*b:ale_virtualtext_maxcolumn*
 b:ale_virtualtext_prefix	ale.txt	/*b:ale_virtualtext_prefix*
+b:ale_virtualtext_single	ale.txt	/*b:ale_virtualtext_single*
 b:ale_vue_vls_executable	ale-vue.txt	/*b:ale_vue_vls_executable*
 b:ale_vue_vls_use_global	ale-vue.txt	/*b:ale_vue_vls_use_global*
 b:ale_vue_volar_executable	ale-vue.txt	/*b:ale_vue_volar_executable*
@@ -1640,6 +1661,9 @@ b:ale_yaml_swaglint_use_global	ale-yaml.txt	/*b:ale_yaml_swaglint_use_global*
 b:ale_yaml_yamlfix_executable	ale-yaml.txt	/*b:ale_yaml_yamlfix_executable*
 b:ale_yaml_yamlfix_options	ale-yaml.txt	/*b:ale_yaml_yamlfix_options*
 b:ale_yaml_yamlfix_use_global	ale-yaml.txt	/*b:ale_yaml_yamlfix_use_global*
+b:ale_yaml_yamlfmt_executable	ale-yaml.txt	/*b:ale_yaml_yamlfmt_executable*
+b:ale_yaml_yamlfmt_options	ale-yaml.txt	/*b:ale_yaml_yamlfmt_options*
+b:ale_yaml_yamlfmt_use_global	ale-yaml.txt	/*b:ale_yaml_yamlfmt_use_global*
 b:ale_yaml_yamllint_executable	ale-yaml.txt	/*b:ale_yaml_yamllint_executable*
 b:ale_yaml_yamllint_options	ale-yaml.txt	/*b:ale_yaml_yamllint_options*
 b:ale_yang_lsp_executable	ale-yang.txt	/*b:ale_yang_lsp_executable*
@@ -1680,6 +1704,8 @@ g:ale_bazel_buildifier_options	ale-bazel.txt	/*g:ale_bazel_buildifier_options*
 g:ale_bazel_buildifier_use_global	ale-bazel.txt	/*g:ale_bazel_buildifier_use_global*
 g:ale_bib_bibclean_executable	ale-bib.txt	/*g:ale_bib_bibclean_executable*
 g:ale_bib_bibclean_options	ale-bib.txt	/*g:ale_bib_bibclean_options*
+g:ale_bicep_az_bicep_executable	ale-bicep.txt	/*g:ale_bicep_az_bicep_executable*
+g:ale_bicep_az_bicep_options	ale-bicep.txt	/*g:ale_bicep_az_bicep_options*
 g:ale_bicep_bicep_executable	ale-bicep.txt	/*g:ale_bicep_bicep_executable*
 g:ale_bicep_bicep_options	ale-bicep.txt	/*g:ale_bicep_bicep_options*
 g:ale_bitbake_oelint_adv_config	ale-bitbake.txt	/*g:ale_bitbake_oelint_adv_config*
@@ -1818,6 +1844,8 @@ g:ale_dhall_options	ale-dhall.txt	/*g:ale_dhall_options*
 g:ale_disable_lsp	ale.txt	/*g:ale_disable_lsp*
 g:ale_dockerfile_dockerfile_lint_executable	ale-dockerfile.txt	/*g:ale_dockerfile_dockerfile_lint_executable*
 g:ale_dockerfile_dockerfile_lint_options	ale-dockerfile.txt	/*g:ale_dockerfile_dockerfile_lint_options*
+g:ale_dockerfile_dockerlinter_executable	ale-dockerfile.txt	/*g:ale_dockerfile_dockerlinter_executable*
+g:ale_dockerfile_dockerlinter_options	ale-dockerfile.txt	/*g:ale_dockerfile_dockerlinter_options*
 g:ale_dockerfile_hadolint_image	ale-dockerfile.txt	/*g:ale_dockerfile_hadolint_image*
 g:ale_dockerfile_hadolint_options	ale-dockerfile.txt	/*g:ale_dockerfile_hadolint_options*
 g:ale_dockerfile_hadolint_use_docker	ale-dockerfile.txt	/*g:ale_dockerfile_hadolint_use_docker*
@@ -1863,6 +1891,7 @@ g:ale_erlang_erlc_options	ale-erlang.txt	/*g:ale_erlang_erlc_options*
 g:ale_erlang_erlfmt_executable	ale-erlang.txt	/*g:ale_erlang_erlfmt_executable*
 g:ale_erlang_erlfmt_options	ale-erlang.txt	/*g:ale_erlang_erlfmt_options*
 g:ale_erlang_syntaxerl_executable	ale-erlang.txt	/*g:ale_erlang_syntaxerl_executable*
+g:ale_eruby_erbformatter_executable	ale-eruby.txt	/*g:ale_eruby_erbformatter_executable*
 g:ale_eruby_erblint_executable	ale-eruby.txt	/*g:ale_eruby_erblint_executable*
 g:ale_eruby_ruumba_executable	ale-eruby.txt	/*g:ale_eruby_ruumba_executable*
 g:ale_exclude_highlights	ale.txt	/*g:ale_exclude_highlights*
@@ -1901,11 +1930,6 @@ g:ale_go_golangci_lint_executable	ale-go.txt	/*g:ale_go_golangci_lint_executable
 g:ale_go_golangci_lint_options	ale-go.txt	/*g:ale_go_golangci_lint_options*
 g:ale_go_golangci_lint_package	ale-go.txt	/*g:ale_go_golangci_lint_package*
 g:ale_go_golines_options	ale-go.txt	/*g:ale_go_golines_options*
-g:ale_go_golint_executable	ale-go.txt	/*g:ale_go_golint_executable*
-g:ale_go_golint_options	ale-go.txt	/*g:ale_go_golint_options*
-g:ale_go_gometalinter_executable	ale-go.txt	/*g:ale_go_gometalinter_executable*
-g:ale_go_gometalinter_lint_package	ale-go.txt	/*g:ale_go_gometalinter_lint_package*
-g:ale_go_gometalinter_options	ale-go.txt	/*g:ale_go_gometalinter_options*
 g:ale_go_gopls_executable	ale-go.txt	/*g:ale_go_gopls_executable*
 g:ale_go_gopls_fix_executable	ale-go.txt	/*g:ale_go_gopls_fix_executable*
 g:ale_go_gopls_fix_options	ale-go.txt	/*g:ale_go_gopls_fix_options*
@@ -1922,6 +1946,9 @@ g:ale_go_staticcheck_executable	ale-go.txt	/*g:ale_go_staticcheck_executable*
 g:ale_go_staticcheck_lint_package	ale-go.txt	/*g:ale_go_staticcheck_lint_package*
 g:ale_go_staticcheck_options	ale-go.txt	/*g:ale_go_staticcheck_options*
 g:ale_go_staticcheck_use_global	ale-go.txt	/*g:ale_go_staticcheck_use_global*
+g:ale_groovy_npmgroovylint_executable	ale-groovy.txt	/*g:ale_groovy_npmgroovylint_executable*
+g:ale_groovy_npmgroovylint_fix_options	ale-groovy.txt	/*g:ale_groovy_npmgroovylint_fix_options*
+g:ale_groovy_npmgroovylint_options	ale-groovy.txt	/*g:ale_groovy_npmgroovylint_options*
 g:ale_hack_hack_executable	ale-hack.txt	/*g:ale_hack_hack_executable*
 g:ale_hack_hackfmt_options	ale-hack.txt	/*g:ale_hack_hackfmt_options*
 g:ale_hack_hhast_executable	ale-hack.txt	/*g:ale_hack_hhast_executable*
@@ -1930,6 +1957,8 @@ g:ale_handlebars_embertemplatelint_use_global	ale-handlebars.txt	/*g:ale_handleb
 g:ale_haskell_brittany_executable	ale-haskell.txt	/*g:ale_haskell_brittany_executable*
 g:ale_haskell_cabal_ghc_options	ale-haskell.txt	/*g:ale_haskell_cabal_ghc_options*
 g:ale_haskell_floskell_executable	ale-haskell.txt	/*g:ale_haskell_floskell_executable*
+g:ale_haskell_fourmolu_executable	ale-haskell.txt	/*g:ale_haskell_fourmolu_executable*
+g:ale_haskell_fourmolu_options	ale-haskell.txt	/*g:ale_haskell_fourmolu_options*
 g:ale_haskell_ghc_mod_executable	ale-haskell.txt	/*g:ale_haskell_ghc_mod_executable*
 g:ale_haskell_ghc_options	ale-haskell.txt	/*g:ale_haskell_ghc_options*
 g:ale_haskell_hdevtools_executable	ale-haskell.txt	/*g:ale_haskell_hdevtools_executable*
@@ -1961,6 +1990,8 @@ g:ale_html_beautify_use_global	ale-html.txt	/*g:ale_html_beautify_use_global*
 g:ale_html_htmlhint_executable	ale-html.txt	/*g:ale_html_htmlhint_executable*
 g:ale_html_htmlhint_options	ale-html.txt	/*g:ale_html_htmlhint_options*
 g:ale_html_htmlhint_use_global	ale-html.txt	/*g:ale_html_htmlhint_use_global*
+g:ale_html_rustywind_executable	ale-html.txt	/*g:ale_html_rustywind_executable*
+g:ale_html_rustywind_options	ale-html.txt	/*g:ale_html_rustywind_options*
 g:ale_html_stylelint_executable	ale-html.txt	/*g:ale_html_stylelint_executable*
 g:ale_html_stylelint_options	ale-html.txt	/*g:ale_html_stylelint_options*
 g:ale_html_stylelint_use_global	ale-html.txt	/*g:ale_html_stylelint_use_global*
@@ -2088,6 +2119,7 @@ g:ale_lua_stylua_options	ale-lua.txt	/*g:ale_lua_stylua_options*
 g:ale_make_checkmake_config	ale-make.txt	/*g:ale_make_checkmake_config*
 g:ale_markdown_markdownlint_executable	ale-markdown.txt	/*g:ale_markdown_markdownlint_executable*
 g:ale_markdown_markdownlint_options	ale-markdown.txt	/*g:ale_markdown_markdownlint_options*
+g:ale_markdown_marksman_executable	ale-markdown.txt	/*g:ale_markdown_marksman_executable*
 g:ale_markdown_mdl_executable	ale-markdown.txt	/*g:ale_markdown_mdl_executable*
 g:ale_markdown_mdl_options	ale-markdown.txt	/*g:ale_markdown_mdl_options*
 g:ale_markdown_pandoc_executable	ale-markdown.txt	/*g:ale_markdown_pandoc_executable*
@@ -2106,6 +2138,8 @@ g:ale_nim_nimpretty_executable	ale-nim.txt	/*g:ale_nim_nimpretty_executable*
 g:ale_nim_nimpretty_options	ale-nim.txt	/*g:ale_nim_nimpretty_options*
 g:ale_nix_alejandra_executable	ale-nix.txt	/*g:ale_nix_alejandra_executable*
 g:ale_nix_alejandra_options	ale-nix.txt	/*g:ale_nix_alejandra_options*
+g:ale_nix_deadnix_executable	ale-nix.txt	/*g:ale_nix_deadnix_executable*
+g:ale_nix_deadnix_options	ale-nix.txt	/*g:ale_nix_deadnix_options*
 g:ale_nix_fix_check_executable	ale-nix.txt	/*g:ale_nix_fix_check_executable*
 g:ale_nix_nixfmt_executable	ale-nix.txt	/*g:ale_nix_nixfmt_executable*
 g:ale_nix_nixfmt_options	ale-nix.txt	/*g:ale_nix_nixfmt_options*
@@ -2550,9 +2584,12 @@ g:ale_vim_vimls_use_global	ale-vim.txt	/*g:ale_vim_vimls_use_global*
 g:ale_vim_vint_executable	ale-vim.txt	/*g:ale_vim_vint_executable*
 g:ale_vim_vint_show_style_issues	ale-vim.txt	/*g:ale_vim_vint_show_style_issues*
 g:ale_virtualenv_dir_names	ale.txt	/*g:ale_virtualenv_dir_names*
+g:ale_virtualtext_column	ale.txt	/*g:ale_virtualtext_column*
 g:ale_virtualtext_cursor	ale.txt	/*g:ale_virtualtext_cursor*
 g:ale_virtualtext_delay	ale.txt	/*g:ale_virtualtext_delay*
+g:ale_virtualtext_maxcolumn	ale.txt	/*g:ale_virtualtext_maxcolumn*
 g:ale_virtualtext_prefix	ale.txt	/*g:ale_virtualtext_prefix*
+g:ale_virtualtext_single	ale.txt	/*g:ale_virtualtext_single*
 g:ale_vue_vls_executable	ale-vue.txt	/*g:ale_vue_vls_executable*
 g:ale_vue_vls_use_global	ale-vue.txt	/*g:ale_vue_vls_use_global*
 g:ale_vue_volar_executable	ale-vue.txt	/*g:ale_vue_volar_executable*
@@ -2583,6 +2620,9 @@ g:ale_yaml_swaglint_use_global	ale-yaml.txt	/*g:ale_yaml_swaglint_use_global*
 g:ale_yaml_yamlfix_executable	ale-yaml.txt	/*g:ale_yaml_yamlfix_executable*
 g:ale_yaml_yamlfix_options	ale-yaml.txt	/*g:ale_yaml_yamlfix_options*
 g:ale_yaml_yamlfix_use_global	ale-yaml.txt	/*g:ale_yaml_yamlfix_use_global*
+g:ale_yaml_yamlfmt_executable	ale-yaml.txt	/*g:ale_yaml_yamlfmt_executable*
+g:ale_yaml_yamlfmt_options	ale-yaml.txt	/*g:ale_yaml_yamlfmt_options*
+g:ale_yaml_yamlfmt_use_global	ale-yaml.txt	/*g:ale_yaml_yamlfmt_use_global*
 g:ale_yaml_yamllint_executable	ale-yaml.txt	/*g:ale_yaml_yamllint_executable*
 g:ale_yaml_yamllint_options	ale-yaml.txt	/*g:ale_yaml_yamllint_options*
 g:ale_yang_lsp_executable	ale-yang.txt	/*g:ale_yang_lsp_executable*

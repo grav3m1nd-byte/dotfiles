@@ -159,6 +159,7 @@ Notes:
   * `dhall-lint`
 * Dockerfile
   * `dockerfile_lint`
+  * `dockerlinter`
   * `dprint`
   * `hadolint`
 * Elixir
@@ -174,6 +175,7 @@ Notes:
   * `elm-make`
 * Erb
   * `erb`
+  * `erb-formatter`
   * `erblint`
   * `erubi`
   * `erubis`
@@ -212,8 +214,6 @@ Notes:
   * `golangci-lint`!!
   * `golangserver`
   * `golines`
-  * `golint`
-  * `gometalinter`!!
   * `gopls`
   * `gosimple`!!
   * `gotype`!!
@@ -223,6 +223,8 @@ Notes:
   * `eslint`
   * `gqlint`
   * `prettier`
+* Groovy
+  * `npm-groovy-lint`
 * Hack
   * `hack`
   * `hackfmt`
@@ -236,6 +238,7 @@ Notes:
   * `cabal-ghc`
   * `cspell`
   * `floskell`
+  * `fourmolu`
   * `ghc`
   * `ghc-mod`
   * `hdevtools`
@@ -262,6 +265,7 @@ Notes:
   * `htmlhint`
   * `prettier`
   * `proselint`
+  * `rustywind`
   * `tidy`
   * `write-good`
 * Idris
@@ -360,6 +364,7 @@ Notes:
   * `cspell`
   * `languagetool`!!
   * `markdownlint`!!
+  * `marksman`
   * `mdl`
   * `pandoc`
   * `prettier`
@@ -381,6 +386,7 @@ Notes:
   * `nimpretty`
 * nix
   * `alejandra`
+  * `deadnix`
   * `nix-instantiate`
   * `nixfmt`
   * `nixpkgs-fmt`
@@ -693,6 +699,7 @@ Notes:
   * `swaglint`
   * `yaml-language-server`
   * `yamlfix`
+  * `yamlfmt`
   * `yamllint`
 * YANG
   * `yang-lsp`
