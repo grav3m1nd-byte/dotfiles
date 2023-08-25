@@ -100,7 +100,8 @@ let g:lightline = {
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
@@ -157,6 +158,8 @@ let g:airline_detect_iminsert = 1
 let g:airline_inactive_collapse = 1
 "Use alternative separators for the statusline of inactive windows >
 "let g:airline_inactive_alt_sep = 1
+"Remove separators from empty sections
+let g:airline_skip_empty_sections = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Configuring Syntastic
