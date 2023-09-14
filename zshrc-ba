@@ -231,6 +231,11 @@ fi
 DISABLE_FZF_AUTO_COMPLETION="true"
 DISABLE_FZF_KEY_BINDINGS="true"
 
+# Enable exegol autocompletion
+if [ -x /usr/bin/exegol ]; then
+    eval "$(register-python-argcomplete --no-defaults exegol)"
+fi
+
 # Add Kali customizations to the default shell environment
 # Add /usr/local/sbin, /usr/sbin and /sbin to the PATH for all users
 if ! echo "$PATH" | tr : '\n' | grep -q "^/sbin$"; then
