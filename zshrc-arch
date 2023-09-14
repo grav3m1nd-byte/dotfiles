@@ -192,22 +192,25 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 # Enable completion features
 autoload -Uz compinit && compinit
 zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Automatically find new executables in $PATH after installation
 zstyle ':completion:*' rehash true
 
-# Messages/warnings format
+# Messages/warnings format 
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*:descriptions' format $'%{\E[01;31m%}-- %d --%{\E[m%}'
-zstyle ':completion:*:messages' format $'%{\E[01;04;31m%}-- %d --%{\E[m%}'
-zstyle ':completion:*:warnings' format $'%{\E[01;04;31m%}-- No matches for: %d --%{\E[m%}'
+#zstyle ':completion:*:descriptions' format $'%{\E[01;31m%}-- %d --%{\E[m%}'
+#zstyle ':completion:*:messages' format $'%{\E[01;04;31m%}-- %d --%{\E[m%}'
+#zstyle ':completion:*:warnings' format $'%{\E[01;04;31m%}-- No matches for: %d --%{\E[m%}'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format $'%F{green}-- %d --%f'
+zstyle ':completion:*:messages' format $'%F{blue}-- %d --%f'
+zstyle ':completion:*:warnings' format $'%F{red}-- No matches for: %d --%f'
 
 # zsh-autocompletion settings for fzf
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="true"
-
-
 
 # Enable auto-suggestions based on the history
 # change suggestion color
