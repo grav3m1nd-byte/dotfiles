@@ -77,3 +77,23 @@ $ ln -s ~/dotfiles/motd-mac ~/.motd
 ```
 > To use these inside the root user context (only recommended for advanced users and at your own risk), create the same symlinks as root but use the full path to these files and directories.
 
+## Git: Use Commit Signing
+Section will be expanded soon.
+ 
+Commands:
+```
+$ gpg --full-gen-key
+$ KEYID=$(gpg --list-secret-keys --keyid-format long | grep sec | tr -s ' ' | cut -d ' ' -f 2| cut -d '/' -f 2) && gpg --armor --export ${KEYID}
+```
+ 
+Use the output from the last command above and add it to your Github account.
+ 
+### Git Config:
+The Following can be added to the local repository or applied globally (--global)
+```
+$ git config user.name "full_name_in_account"
+$ git config user.email "github_email"
+$ git config user.signingkey ${KEYID}
+$ git config gpg.program "gpg"
+$ git config commit.gpgsign true
+```    
